@@ -25,7 +25,7 @@ mkdir build
 
 cd build
 
-cmake .. && make -j4
+cmake -S .. -B . -G Ninja && ninja
 ```
 
 ## Build image and run container:

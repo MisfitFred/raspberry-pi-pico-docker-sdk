@@ -36,7 +36,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: lukstep/raspberry-pi-pico-sdk
+          images: misfitfred/raspberry-pi-pico-sdk
       - name: Push SDK image
         if: github.event_name == 'release' && github.event.action == 'published'
         uses: docker/build-push-action@v4
