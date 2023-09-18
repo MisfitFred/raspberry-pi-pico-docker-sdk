@@ -30,13 +30,13 @@ jobs:
       - name: Log into Docker Hub
         uses: docker/login-action@v2
         with:
-          username: ${{ github.actor }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_TOKEN }}
       - name: Extract SDK metadata
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: misfitfred/raspberry-pi-pico-sdk
+          images: fred78/raspberry-pi-pico-sdk
       - name: Push SDK image
         if: github.event_name == 'release' && github.event.action == 'published'
         uses: docker/build-push-action@v4
